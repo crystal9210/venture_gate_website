@@ -23,7 +23,13 @@ export async function POST(request: NextRequest) {
         );
     } catch (error) {
         return NextResponse.json(
-            { error: "リクエストの処理中にエラーが発生しました。" },
+            {
+                error: `リクエストの処理中にエラーが発生しました。: ${JSON.stringify(
+                    error,
+                    null,
+                    2
+                )} `,
+            },
             { status: 500 }
         );
     }
