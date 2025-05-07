@@ -230,7 +230,7 @@ export default function Home() {
                             <strong>副代表：</strong>上谷　竜
                         </p>
                         <p>
-                            <strong>会員数：</strong>5名
+                            <strong>会員数：</strong>8名
                         </p>
                     </div>
                 </section>
