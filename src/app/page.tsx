@@ -8,9 +8,9 @@ export default function Home() {
     return (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-24 py-8 sm:py-12 md:py-16 bg-white">
             {/* Hero */}
-            <section className="relative bg-gradient-to-r from-[#fb923c] to-[#f97316] text-white py-12 sm:py-16 md:py-20 rounded-lg overflow-hidden shadow-md">
-                <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                    <div className="flex-1 space-y-6 animate-fadeInLeft text-center md:text-left">
+            <section className="relative bg-gradient-to-r from-orangeLight to-orangeDark text-white py-12 sm:py-16 md:py-20 rounded-lg overflow-hidden shadow-md">
+                <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                    <div className="flex-1 space-y-5 animate-fadeInLeft text-center md:text-left">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
                             Venture Gate
                             <br />
@@ -21,12 +21,12 @@ export default function Home() {
                             <br />
                             ここが挑戦の出発点
                         </p>
-                        <button className="inline-flex items-center gap-2 bg-white text-[#ea580c] font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-orange-50 transition text-lg sm:text-xl">
+                        <button className="inline-flex items-center gap-2 bg-white text-orangeAccent font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-orange-50 transition text-lg sm:text-xl">
                             今すぐ参加 <FaArrowRight />
                         </button>
                     </div>
                     <div className="flex-1 flex items-center justify-center w-full">
-                        <div className=" w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] relative rounded-lg overflow-hidden animate-fadeInRight flex items-center justify-center bg-transparent shadow-none">
+                        <div className="w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] relative rounded-lg overflow-hidden animate-fadeInRight flex items-center justify-center bg-transparent shadow-none">
                             <Image
                                 src="/images/VentureGate.png"
                                 alt="Venture Gate"
@@ -102,7 +102,13 @@ export default function Home() {
                         ※特別活動は構想段階のため、内容は変更される可能性があります。
                     </p>
                     <p className="text-[#ea580c] font-semibold">
-                        現在会員大募集中！
+                        現在会員大募集中！&nbsp;
+                        <Link
+                            href="/join"
+                            className="inline-block bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold px-4 py-2 rounded transition"
+                        >
+                            入会はこちら
+                        </Link>
                     </p>
                     <ul className="list-disc list-inside space-y-1">
                         <li>新しいことにチャレンジしたい方</li>
@@ -172,7 +178,7 @@ export default function Home() {
                     Googleフォーム
                 </p>
                 <Link
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSf-example-google-form"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScBlhiVMQqCGGDOpZY6QrZXfCun2mOUB0xVo4n_HnINzIQ8ag/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#ea580c] underline text-lg sm:text-xl"
