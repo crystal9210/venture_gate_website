@@ -11,7 +11,7 @@ interface GradientTextProps {
 export default function GradientText({
     children,
     colors = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"],
-    animationSpeed = 8,
+    animationSpeed = 100,
     showBorder = false,
     className = "",
 }: GradientTextProps) {
@@ -27,12 +27,12 @@ export default function GradientText({
             {showBorder && (
                 <div
                     className="absolute inset-0 animate-gradient bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] bg-[length:300%_100%] rounded-xl pointer-events-none"
-                    style={{ animationDuration: `${animationSpeed}s` }}
+                    style={gradientStyle} // ←ここで使う
                 />
             )}
             <span
                 className="relative bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] bg-[length:300%_100%]"
-                style={{ animationDuration: `${animationSpeed}s` }}
+                style={gradientStyle} // ←ここでも使う
             >
                 {children}
             </span>

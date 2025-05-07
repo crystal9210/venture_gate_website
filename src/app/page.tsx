@@ -46,7 +46,7 @@ export default function Home() {
                 {/* Hero */}
                 <section
                     id="top"
-                    className="relative text-white py-20 sm:py-24 md:py-32 rounded-lg overflow-hidden shadow-md"
+                    className="relative text-white py-20 sm:py-24 md:py-32 rounded-lg overflow-hidden shadow-md sm:px-6"
                     style={{
                         background:
                             "linear-gradient(to right, #fde047, #fb923c, #f97316)",
@@ -62,7 +62,7 @@ export default function Home() {
                                     "#4079ff",
                                     "#40ffaa",
                                 ]}
-                                animationSpeed={3}
+                                animationSpeed={10}
                                 showBorder={false}
                                 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max"
                             >
@@ -82,7 +82,9 @@ export default function Home() {
                                 showBorder={false}
                                 className="text-2xl sm:text-4xl md:text-5xl font-extrabold max-w-md mx-auto md:mx-0 block"
                             >
-                                共に考え、共に動く
+                                共に考え、
+                                <br />
+                                共に動く
                                 <br />
                                 ここが挑戦の出発点
                             </GradientText>
