@@ -13,6 +13,7 @@ import FixedHeader from "./_components/FixedHeader";
 import GradientText from "./_components/GradientText";
 import SplashCursor from "./_components/SplashCursor";
 import { useEffect, useRef, useState } from "react";
+import GateLogo from "./_components/GateLogo";
 
 export default function Home() {
     const sectionRef = useRef<HTMLElement | null>(null);
@@ -139,7 +140,7 @@ export default function Home() {
                     {/* ---------- 3 本柱 ---------- */}
                     <div
                         /* スマホでも 3 列 ＋ 余白を逃がすため横スクロール許可 */
-                        className="grid grid-cols-3 gap-12 mb-64 overflow-x-auto px-2 sm:px-0 scroll-smooth scroll-px-4 snap-x snap-mandatory"
+                        className="grid grid-cols-3 gap-12 mb-20 sm:mb-32 lg:mb-64 overflow-x-auto px-2 sm:px-0 scroll-smooth scroll-px-4 snap-x snap-mandatory"
                     >
                         {[
                             { id: 1, label: "アントレプレナーシップ" },
@@ -204,33 +205,8 @@ export default function Home() {
                             </p>
                         </div>
 
-                        {/* ── Gate ロゴ ─────────────────────────────── */}
                         {/* ───────── Gate ロゴ ───────── */}
-                        <div className="flex-1 flex justify-center md:justify-center">
-                            {/* ここに transform + scale を追加 */}
-                            <div
-                                className="relative inline-block text-black leading-none select-none transform-gpu origin-center scale-110   /* モバイル +10% */ sm:scale-125 md:scale-140 lg:scale-150" /* 画面幅に応じてさらに拡大 */
-                            >
-                                {/* 上部 Gate */}
-                                <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-3xl font-semibold">
-                                    Gate
-                                </span>
-
-                                {/* 本体「門」 */}
-                                <span className="text-[10rem] font-bold">
-                                    門
-                                </span>
-
-                                {/* ▼―― 内部スタック ――▼ */}
-                                <div className="absolute inset-x-0 bottom-6 flex flex-col items-center text-center">
-                                    <span className="text-3xl font-semibold">
-                                        起業
-                                    </span>
-                                    <span className="text-xl">Venture</span>
-                                </div>
-                                {/* ▲――――――――――――▲ */}
-                            </div>
-                        </div>
+                        <GateLogo />
                     </div>
                 </section>
 
