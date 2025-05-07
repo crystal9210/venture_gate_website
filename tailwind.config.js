@@ -8,6 +8,12 @@ module.exports = {
                 orangeDark: '#f97316',
                 orangeAccent: '#ea580c',
             },
+            fontFamily: {
+                noto: ['"Noto Sans JP"', 'sans-serif'],
+            },
+            dropShadow: {
+                '2xl': '4px 4px 6px rgba(0,0,0,0.5)',
+            },
         },
     },
     // theme: {

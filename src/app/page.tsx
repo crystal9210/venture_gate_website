@@ -10,8 +10,35 @@ import {
     FaWpforms,
 } from "react-icons/fa";
 import FixedHeader from "./_components/FixedHeader";
+import GradientText from "./_components/GradientText";
+import SplashCursor from "./_components/SplashCursor";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const [showCursor, setShowCursor] = useState(false);
+
+    useEffect(() => {
+        const currentSection = sectionRef.current;
+        if (!currentSection) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setShowCursor(entry.isIntersecting);
+            },
+            {
+                root: null,
+                threshold: 0.1,
+            }
+        );
+
+        observer.observe(currentSection);
+
+        return () => {
+            if (currentSection) observer.unobserve(currentSection);
+        };
+    }, []);
+
     return (
         <>
             <FixedHeader />
@@ -27,16 +54,38 @@ export default function Home() {
                 >
                     <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
                         <div className="flex-1 space-y-6 animate-fadeInLeft text-center md:text-left">
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight">
+                            <GradientText
+                                colors={[
+                                    "#40ffaa",
+                                    "#4079ff",
+                                    "#40ffaa",
+                                    "#4079ff",
+                                    "#40ffaa",
+                                ]}
+                                animationSpeed={3}
+                                showBorder={false}
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max"
+                            >
                                 Venture Gate
                                 <br />
                                 埼玉大学事業創造サークル
-                            </h1>
-                            <p className="text-xl sm:text-2xl md:text-xl font-light max-w-md mx-auto md:mx-0">
+                            </GradientText>
+                            <GradientText
+                                colors={[
+                                    "#ff512f",
+                                    "#ff9966",
+                                    "#ffb347",
+                                    "#ff512f",
+                                    "#ff9966",
+                                ]}
+                                animationSpeed={5}
+                                showBorder={false}
+                                className="text-2xl sm:text-4xl md:text-5xl font-extrabold max-w-md mx-auto md:mx-0 block"
+                            >
                                 共に考え、共に動く
                                 <br />
                                 ここが挑戦の出発点
-                            </p>
+                            </GradientText>
                             <Link
                                 href="#contact"
                                 role="link"
@@ -61,12 +110,31 @@ export default function Home() {
                 </section>
 
                 {/* ---------- 活動の3本柱 ---------- */}
-                <section id="activities" className="space-y-16">
-                    <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold">
+                <section
+                    id="activities"
+                    ref={sectionRef}
+                    className="relative space-y-16"
+                >
+                    {/* SplashCursor を絶対配置・限定的にここでだけ */}
+                    {showCursor && (
+                        <div className="absolute inset-0 pointer-events-none z-0">
+                            <SplashCursor
+                                DENSITY_DISSIPATION={1.5} // 色の退色を抑える（小さめ）
+                                VELOCITY_DISSIPATION={1.0} // 動きの減衰を抑える
+                                COLOR_UPDATE_SPEED={15} // 色の変化速度を少し速め
+                                BACK_COLOR={{ r: 0.8, g: 0.3, b: 0.1 }} // 暖色系の背景色（赤橙寄り）
+                                SPLAT_FORCE={7000} // 色の広がり強め
+                                SPLAT_RADIUS={0.25} // 色の広がり半径少し大きめ
+                                // 他パラメータはデフォルトのまま
+                            />
+                        </div>
+                    )}
+
+                    <h2 className="text-center text-3xl text-gray-700 sm:text-4xl md:text-5xl font-extrabold">
                         活動の3本柱
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 mb-64">
                         {[
                             { id: 1, label: "アントレプレナーシップ" },
                             { id: 2, label: "ビジネス" },
@@ -99,18 +167,34 @@ export default function Home() {
 
                     {/* 門ロゴ + 説明 */}
                     <div className="flex flex-col md:flex-row items-center gap-12">
-                        {/* 説明文はそのまま */}
-                        <div className="flex-1 space-y-4 text-lg sm:text-xl leading-relaxed">
-                            <p>
-                                私たちは、アントレプレナーシップ、ビジネス、起業の3つを軸に
-                                幅広く活動していきたいと思っています。私たちと一緒に新しいことがしたい
-                                と思っている方、ご参加お待ちしています。
+                        {/* ── 説明文 ───────────────────────── */}
+                        <div className="flex-1">
+                            <p className="space-y-6  text-orange-700 text-lg sm:text-xl md:text-2xl leading-relaxed font-noto font-medium bg-gradient-to-r from-orangeLight via-orangeDark to-orangeAccent bg-clip-text drop-shadow-2xl inline-block">
+                                私たちは、
+                                <br />
+                                <span className="font-bold">
+                                    アントレプレナーシップ
+                                </span>
+                                、<span className="font-bold">ビジネス</span>、
+                                <span className="font-bold">起業</span>の{" "}
+                                <span className="underline decoration-orangeAccent">
+                                    3&nbsp;つ
+                                </span>{" "}
+                                を軸に幅広く活動しています。
+                                <br className="hidden sm:inline" />
+                                <span className="tracking-wide">
+                                    新しいことにチャレンジしたい&nbsp;あなたの参加をお待ちしています！
+                                </span>
                             </p>
                         </div>
 
                         {/* ── Gate ロゴ ─────────────────────────────── */}
+                        {/* ───────── Gate ロゴ ───────── */}
                         <div className="flex-1 flex justify-center md:justify-center">
-                            <div className="relative inline-block text-black leading-none select-none">
+                            {/* ここに transform + scale を追加 */}
+                            <div
+                                className="relative inline-block text-black leading-none select-none transform-gpu origin-center scale-110   /* モバイル +10% */ sm:scale-125 md:scale-140 lg:scale-150" /* 画面幅に応じてさらに拡大 */
+                            >
                                 {/* 上部 Gate */}
                                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-3xl font-semibold">
                                     Gate
@@ -243,60 +327,51 @@ export default function Home() {
                 </section>
 
                 {/* お問い合わせ */}
-                <section id="contact" className="space-y-6">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-[#ea580c] border-l-4 border-[#f97316] pl-4 flex items-center gap-2">
-                        <FaEnvelope /> お問い合わせ
+                <section id="contact" className="space-y-8 max-w-3xl px-4">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-[#ea580c] border-l-4 border-[#f97316] pl-4 flex items-center gap-3">
+                        <FaEnvelope aria-hidden="true" /> お問い合わせ
                     </h2>
 
                     {/* E-mail */}
-                    <div className="flex items-center gap-2">
-                        <FaEnvelope className="text-[#ea580c] text-xl" />
-                        <span className="text-gray-700 text-lg sm:text-xl">
-                            E-mailアドレス
-                        </span>
-                    </div>
-                    <a
+                    <Link
                         href="mailto:saitama.univ.venturegate@gmail.com"
-                        className="text-[#ea580c] underline text-lg sm:text-xl ml-7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="メールアドレスへ送信"
+                        className="flex items-center gap-3 text-[#ea580c] underline text-lg sm:text-xl hover:text-[#f97316] transition-colors"
                     >
-                        saitama.univ.venturegate@gmail.com
-                    </a>
+                        <FaEnvelope className="text-[#ea580c] text-2xl" />
+                        <span>saitama.univ.venturegate@gmail.com</span>
+                    </Link>
 
                     {/* Googleフォーム */}
-                    <div className="flex items-center gap-2 mt-2">
-                        {/* FaWpforms または MdAssignment どちらかお好みで */}
-                        <FaWpforms className="text-[#ea580c] text-xl" />
-                        {/* <MdAssignment className="text-[#ea580c] text-xl" /> */}
-                        <span className="text-gray-700 text-lg sm:text-xl">
-                            Googleフォーム
-                        </span>
-                    </div>
-                    <a
+                    <Link
                         href="https://docs.google.com/forms/d/e/1FAIpQLScBlhiVMQqCGGDOpZY6QrZXfCun2mOUB0xVo4n_HnINzIQ8ag/viewform"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#ea580c] underline text-lg sm:text-xl ml-7"
+                        aria-label="Googleフォームへ移動"
+                        className="flex items-center gap-3 text-[#ea580c] underline text-lg sm:text-xl hover:text-[#f97316] transition-colors"
                     >
-                        フォームはこちら
-                    </a>
+                        <FaWpforms className="text-[#ea580c] text-2xl" />
+                        <span>フォームはこちら</span>
+                    </Link>
 
                     {/* Instagram */}
-                    <div className="flex items-center gap-2 mt-2">
-                        <FaInstagram className="text-[#ea580c] text-xl" />
-                        <a
-                            href="https://www.instagram.com/venture_gate/?igsh=MWg3OG9ycGJsM2xycw%3D%3D#"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#ea580c] underline text-lg sm:text-xl"
-                        >
-                            Instagramはこちら
-                        </a>
-                    </div>
+                    <Link
+                        href="https://www.instagram.com/venture_gate/?igsh=MWg3OG9ycGJsM2xycw%3D%3D#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagramへ移動"
+                        className="flex items-center gap-3 text-[#ea580c] underline text-lg sm:text-xl hover:text-[#f97316] transition-colors"
+                    >
+                        <FaInstagram className="text-[#ea580c] text-2xl" />
+                        <span>Instagramはこちら</span>
+                    </Link>
 
                     <div className="mt-12 text-center">
                         <Link
                             href="#top"
-                            className="text-sm text-gray-500 hover:text-[#ea580c]"
+                            className="text-sm text-gray-500 hover:text-[#ea580c] transition-colors"
                         >
                             TOPに戻る
                         </Link>
