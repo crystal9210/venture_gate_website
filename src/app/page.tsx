@@ -8,7 +8,12 @@ export default function Home() {
     return (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-24 py-8 sm:py-12 md:py-16 bg-white">
             {/* Hero */}
-            <section className="relative bg-gradient-to-r from-orangeLight to-orangeDark text-white py-12 sm:py-16 md:py-20 rounded-lg overflow-hidden shadow-md">
+            <section
+                className="relative text-white py-12 sm:py-16 md:py-20 rounded-lg overflow-hidden shadow-md"
+                style={{
+                    background: "linear-gradient(to right, #fb923c, #f97316)",
+                }}
+            >
                 <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
                     <div className="flex-1 space-y-5 animate-fadeInLeft text-center md:text-left">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
