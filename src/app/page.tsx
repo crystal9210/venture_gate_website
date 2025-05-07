@@ -152,12 +152,23 @@ export default function Home() {
                                 className="flex flex-col items-center relative animate-fadeInUp min-w-[7rem] snap-center"
                             >
                                 {/* 縦バー */}
+                                {/* 3 本柱セクション内 ― 縦バーだけ抜粋 */}
                                 <div className="relative h-72 w-14 rounded-full overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-b from-yellow-300 via-orange-400 to-orange-500" />
+                                    {/* ← インライン style で 3 段グラデーション */}
+                                    <div
+                                        className="absolute inset-0"
+                                        style={{
+                                            background:
+                                                "linear-gradient(to bottom, #fde047 0%, #fb923c 45%, #ea580c 100%)",
+                                        }}
+                                    />
+
+                                    {/* Gate ロゴ */}
                                     <span className="absolute top-4 inset-x-0 text-lg font-semibold text-white/50 text-center select-none">
                                         Gate
                                     </span>
-                                    <span className="absolute inset-x-0 bottom-10 text-6xl font-bold text-white/60 text-center select-none">
+                                    {/* 番号 */}
+                                    <span className="absolute inset-x-0 bottom-10 text-6xl font-bold text-white/70 text-center select-none">
                                         {id}
                                     </span>
                                 </div>
