@@ -136,7 +136,11 @@ export default function Home() {
                         活動の3本柱
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 mb-64">
+                    {/* ---------- 3 本柱 ---------- */}
+                    <div
+                        /* スマホでも 3 列 ＋ 余白を逃がすため横スクロール許可 */
+                        className="grid grid-cols-3 gap-12 mb-64 overflow-x-auto px-2 sm:px-0 scroll-smooth scroll-px-4 snap-x snap-mandatory"
+                    >
                         {[
                             { id: 1, label: "アントレプレナーシップ" },
                             { id: 2, label: "ビジネス" },
@@ -144,23 +148,22 @@ export default function Home() {
                         ].map(({ id, label }) => (
                             <div
                                 key={id}
-                                className="flex flex-col items-center relative animate-fadeInUp"
+                                /* スクロール時に 1 カードずつスナップ */
+                                className="flex flex-col items-center relative animate-fadeInUp min-w-[7rem] snap-center"
                             >
                                 {/* 縦バー */}
                                 <div className="relative h-72 w-14 rounded-full overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-b from-yellow-300 via-orange-400 to-orange-500" />
-                                    {/* Gate ロゴ */}
                                     <span className="absolute top-4 inset-x-0 text-lg font-semibold text-white/50 text-center select-none">
                                         Gate
                                     </span>
-                                    {/* 番号 */}
                                     <span className="absolute inset-x-0 bottom-10 text-6xl font-bold text-white/60 text-center select-none">
                                         {id}
                                     </span>
                                 </div>
 
                                 {/* ラベル */}
-                                <p className="mt-6 text-xl sm:text-2xl font-medium text-black">
+                                <p className="mt-6 text-center text-base sm:text-xl font-medium text-black px-1">
                                     {label}
                                 </p>
                             </div>
