@@ -26,7 +26,7 @@ export default function Home() {
                             <br />
                             ここが挑戦の出発点
                         </p>
-                        <button className="inline-flex items-center gap-2 bg-white text-orangeAccent font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-orange-50 transition text-lg sm:text-xl">
+                        <button className="inline-flex items-center gap-2 bg-white text-[#ea580c] font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-orange-50 transition text-lg sm:text-xl">
                             今すぐ参加 <FaArrowRight />
                         </button>
                     </div>
@@ -134,7 +134,7 @@ export default function Home() {
                     イベント詳細、エントリーはこちらから
                 </p>
                 <Link
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSf-example-google-form"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScBlhiVMQqCGGDOpZY6QrZXfCun2mOUB0xVo4n_HnINzIQ8ag/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-[#f97316] text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-[#ea580c] transition text-lg sm:text-xl"
