@@ -54,9 +54,9 @@ export default function Home() {
                             "linear-gradient(90deg, #ff7b2d 0%, #f4b917 48%, #fad4b8 100%)",
                     }}
                 >
-                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start gap-10">
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start gap-10 max-[414px]:mt-0 max-[414px]:mb-0">
                         {/* 左側：アイコン + タイトル群 */}
-                        <div className="flex flex-col items-center md:items-start md:text-left">
+                        <div className="flex flex-col items-center md:items-start md:text-left max-[414px]:mt-0 max-[414px]:mb-0">
                             {/* GIFアイコン */}
                             <div className="w-60 sm:w-64 flex flex-col md:ml-12 lg:ml-28 mt-4 sm:mt-2 md:ml-8 lg:ml-16 max-[414px]:mt-0 max-[414px]:mb-0">
                                 <GifRecorder />
@@ -80,7 +80,7 @@ export default function Home() {
                                 ]}
                                 animationSpeed={10}
                                 showBorder={false}
-                                className="mt-40 text-4xl text-center sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max md:ml-8 drop-shadow-lg"
+                                className="mt-40 max-[414px]:mt-4 text-4xl text-center sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max md:ml-8 drop-shadow-lg"
                             >
                                 Venture Gate
                             </GradientText>
