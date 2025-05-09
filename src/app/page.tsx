@@ -65,31 +65,45 @@ export default function Home() {
                             {/* タイトル */}
                             <GradientText
                                 colors={[
-                                    "#40ffaa",
-                                    "#4079ff",
-                                    "#40ffaa",
-                                    "#4079ff",
-                                    "#40ffaa",
-                                    "#40ffaa",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#ffe3c4",
+                                    "#f59e0b",
+                                    "#ffe3c4",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
                                 ]}
                                 animationSpeed={10}
                                 showBorder={false}
-                                className="mt-40 text-4xl text-center sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max md:ml-8"
+                                className="mt-40 text-4xl text-center sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max md:ml-8 drop-shadow-lg
+    [text-shadow:2px_2px_8px_rgba(255,123,45,0.5)]"
                             >
                                 Venture Gate
                             </GradientText>
                             <GradientText
                                 colors={[
-                                    "#40ffaa",
-                                    "#4079ff",
-                                    "#40ffaa",
-                                    "#4079ff",
-                                    "#40ffaa",
-                                    "#40ffaa",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#ffe3c4",
+                                    "#f59e0b",
+                                    "#ffe3c4",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
                                 ]}
                                 animationSpeed={10}
                                 showBorder={false}
-                                className="text-2xl text-center sm:text-3xl md:text-4xl lg:text-[2.3rem] font-extrabold leading-tight block max-w-max lg:ml-8"
+                                className="text-2xl text-center sm:text-3xl md:text-4xl lg:text-[2.3rem] font-extrabold leading-tight block max-w-max lg:ml-8 drop-shadow-lg
+    [text-shadow:2px_2px_8px_rgba(255,123,45,0.5)]"
                             >
                                 埼玉大学事業創造サークル
                             </GradientText>
