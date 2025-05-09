@@ -20,8 +20,8 @@ export const AnimatedLogo = forwardRef<HTMLDivElement>((props, ref) => (
             initial={{ scaleX: 0, scaleY: 0 }}
             animate={{
                 /*            0     0.10   0.25   0.45   0.65   0.75   1    */
-                scaleX: [0, 0.03, 1.03, 1.03, 1, 1, 1],
-                scaleY: [0, 0.25, 0.98, 0.98, 1, 1, 1],
+                scaleX: [0, 0.03, 0.025, 1.03, 1.03, 1, 1, 1],
+                scaleY: [0, 0.03, 0.25, 0.98, 0.98, 1, 1, 1],
             }}
             transition={{
                 duration: 1.6,
