@@ -30,6 +30,7 @@ export const AnimatedLogo = forwardRef<HTMLDivElement>((props, ref) => (
                 repeat: 0,
                 repeatDelay: 1.3,
             }}
+            className="max-[414px]:my-0"
         >
             <Image
                 src="/images/VentureGate.png"
