@@ -48,7 +48,7 @@ export default function Home() {
                 {/* Hero */}
                 <section
                     id="top"
-                    className="relative text-white py-20 sm:py-24 md:py-32 overflow-hidden shadow-md sm:mx-auto max-[414px]:py-4"
+                    className="relative text-white py-20 sm:py-24 md:py-32 overflow-hidden shadow-md sm:mx-auto max-[414px]:py-2"
                     style={{
                         background:
                             "linear-gradient(90deg, #ff7b2d 0%, #f4b917 48%, #fad4b8 100%)",
