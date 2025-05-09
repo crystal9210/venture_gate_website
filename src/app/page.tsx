@@ -58,7 +58,7 @@ export default function Home() {
                         {/* 左側：アイコン + タイトル群 */}
                         <div className="flex flex-col items-center md:items-start md:text-left">
                             {/* GIFアイコン */}
-                            <div className="w-60 sm:w-64 flex flex-col md:ml-12 lg:ml-28 mt-4 sm:mt-2 md:ml-8 lg:ml-16">
+                            <div className="w-60 sm:w-64 flex flex-col md:ml-12 lg:ml-28 mt-4 sm:mt-2 md:ml-8 lg:ml-16 max-[414px]:mt-0 max-[414px]:mb-0">
                                 <GifRecorder />
                             </div>
 
