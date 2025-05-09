@@ -54,11 +54,11 @@ export default function Home() {
                             "linear-gradient(90deg, #ff7b2d 0%, #f4b917 48%, #fad4b8 100%)",
                     }}
                 >
-                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start gap-10 max-[414px]:mt-0 max-[414px]:mb-0">
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start gap-10 max-[414px]:mt-0 max-[414px]:mb-0 max-[414px]:py-0">
                         {/* 左側：アイコン + タイトル群 */}
-                        <div className="flex flex-col items-center md:items-start md:text-left max-[414px]:mt-0 max-[414px]:mb-0">
+                        <div className="flex flex-col items-center md:items-start md:text-left max-[414px]:mt-0 max-[414px]:mb-0 max-[414px]:py-0">
                             {/* GIFアイコン */}
-                            <div className="w-60 sm:w-64 flex flex-col md:ml-12 lg:ml-28 mt-4 sm:mt-2 md:ml-8 lg:ml-16 max-[414px]:mt-0 max-[414px]:mb-0">
+                            <div className="w-60 sm:w-64 flex flex-col md:ml-12 lg:ml-28 mt-4 sm:mt-2 md:ml-8 lg:ml-16 max-[414px]:mt-0 max-[414px]:mb-0 max-[414px]:py-0">
                                 <GifRecorder />
                             </div>
 
