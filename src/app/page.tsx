@@ -14,6 +14,7 @@ import GradientText from "./_components/GradientText";
 import SplashCursor from "./_components/SplashCursor";
 import { useEffect, useRef, useState } from "react";
 import GateLogo from "./_components/GateLogo";
+import GifRecorder from "./_components/GitRecorder";
 
 export default function Home() {
     const sectionRef = useRef<HTMLElement | null>(null);
@@ -43,71 +44,98 @@ export default function Home() {
     return (
         <>
             <FixedHeader />
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-24 py-8 sm:py-12 md:py-16 bg-white">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-24 py-8 bg-white pt-0">
                 {/* Hero */}
                 <section
                     id="top"
-                    className="relative text-white py-20 sm:py-24 md:py-32 rounded-lg overflow-hidden shadow-md sm:px-6"
+                    className="relative text-white py-20 sm:py-24 md:py-32 overflow-hidden shadow-md sm:px-6"
                     style={{
                         background:
-                            "linear-gradient(to right, #fde047, #fb923c, #f97316)",
+                            "linear-gradient(90deg, #ff7b2d 0%, #f4b917 48%, #fad4b8 100%)",
                     }}
                 >
-                    <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
-                        <div className="flex-1 space-y-6 animate-fadeInLeft text-center md:text-left">
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start gap-10">
+                        {/* 左側：アイコン + タイトル群 */}
+                        <div className="flex flex-col items-center md:items-start md:text-left">
+                            {/* GIFアイコン */}
+                            <div className="w-60 sm:w-64 flex flex-col md:w-[20rem] ml-12 mt-4 sm:mt-20 sm:ml-0 md:ml-8 lg:ml-16">
+                                <GifRecorder />
+                            </div>
+
+                            {/* タイトル */}
                             <GradientText
                                 colors={[
                                     "#40ffaa",
                                     "#4079ff",
                                     "#40ffaa",
                                     "#4079ff",
+                                    "#40ffaa",
                                     "#40ffaa",
                                 ]}
                                 animationSpeed={10}
                                 showBorder={false}
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max"
+                                className="mt-40 text-4xl text-center sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-tight block max-w-max md:ml-8"
                             >
                                 Venture Gate
-                                <br />
-                                埼玉大学事業創造サークル
                             </GradientText>
                             <GradientText
                                 colors={[
-                                    "#ff512f",
-                                    "#ff9966",
-                                    "#ffb347",
-                                    "#ff512f",
-                                    "#ff9966",
+                                    "#40ffaa",
+                                    "#4079ff",
+                                    "#40ffaa",
+                                    "#4079ff",
+                                    "#40ffaa",
+                                    "#40ffaa",
                                 ]}
-                                animationSpeed={5}
+                                animationSpeed={10}
                                 showBorder={false}
-                                className="text-2xl sm:text-4xl md:text-5xl font-extrabold max-w-md mx-auto md:mx-0 block"
+                                className="text-2xl text-center sm:text-3xl md:text-4xl lg:text-[2.3rem] font-extrabold leading-tight block max-w-max lg:ml-8"
                             >
-                                共に考え、
-                                <br />
-                                共に動く
-                                <br />
-                                ここが挑戦の出発点
+                                埼玉大学事業創造サークル
                             </GradientText>
+                        </div>
+
+                        {/* Right: 共に考え...（画面が狭いと下に回る） */}
+                        <div className="flex-1 space-y-6 text-center md:text-left animate-fadeInRight sm:mt-1 md:flex-col lg:flex-col">
+                            <GradientText
+                                colors={[
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#ffe3c4",
+                                    "#f59e0b",
+                                    "#ffe3c4",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                    "#fff3c1",
+                                ]}
+                                animationSpeed={20}
+                                showBorder={false}
+                                className="flow flow-col text-2xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold max-w-md md:mx-0 mx-auto sm:mx-8 block"
+                            >
+                                <span>共に考え、</span>
+                                <span className="hidden lg:inline">
+                                    <br />
+                                </span>
+                                <span>共に動く</span>
+                                <br />
+                                <span>ここが挑戦の</span>
+                                <span className="hidden lg:inline">
+                                    <br />
+                                </span>
+                                <span>出発点</span>
+                            </GradientText>
+
                             <Link
                                 href="#contact"
                                 role="link"
-                                className="inline-flex items-center gap-2 bg-white text-[#ea580c] font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-orange-50 transition text-lg sm:text-xl"
+                                className="flow flow-col inline-flex items-center gap-2 bg-white text-[#ea580c] font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-orange-50 transition text-lg lg:flex lg:mx-auto"
                             >
                                 今すぐ参加 <FaArrowRight />
                             </Link>
-                        </div>
-
-                        <div className="flex-1 flex items-center justify-center animate-fadeInRight">
-                            <div className="w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] relative rounded-lg overflow-hidden">
-                                <Image
-                                    src="/images/VentureGate.png"
-                                    alt="Venture Gate"
-                                    fill
-                                    className="object-contain p-4"
-                                    priority
-                                />
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -122,12 +150,12 @@ export default function Home() {
                     {showCursor && (
                         <div className="absolute inset-0 pointer-events-none z-0">
                             <SplashCursor
-                                DENSITY_DISSIPATION={1.5} // 色の退色を抑える（小さめ）
+                                DENSITY_DISSIPATION={4.0} // 色の退色を抑える（小さめ）
                                 VELOCITY_DISSIPATION={1.0} // 動きの減衰を抑える
-                                COLOR_UPDATE_SPEED={15} // 色の変化速度を少し速め
-                                BACK_COLOR={{ r: 0.8, g: 0.3, b: 0.1 }} // 暖色系の背景色（赤橙寄り）
-                                SPLAT_FORCE={7000} // 色の広がり強め
-                                SPLAT_RADIUS={0.25} // 色の広がり半径少し大きめ
+                                COLOR_UPDATE_SPEED={10} // 色の変化速度を少し速め
+                                BACK_COLOR={{ r: 0.957, g: 0.726, b: 0.09 }} // 暖色系の背景色（赤橙寄り）
+                                SPLAT_FORCE={4000} // 色の広がり強め
+                                SPLAT_RADIUS={0.2} // 色の広がり半径少し大きめ
                                 // 他パラメータはデフォルトのまま
                             />
                         </div>

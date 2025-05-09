@@ -1017,12 +1017,21 @@ function SplashCursor({
     }
 
     function generateColor() {
-      let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.15;
-      c.g *= 0.15;
-      c.b *= 0.15;
-      return c;
+      const h = 0.07 + Math.random() * 0.05; // Hue: 0.07〜0.12（オレンジ〜黄）
+      const s = 0.5 + Math.random() * 0.2;   // 彩度中程度で柔らかく
+      const v = 0.97;                        // 明度高め（白に近い）
+
+      const { r, g, b } = HSVtoRGB(h, s, v);
+
+      return {
+        r: r * 0.25,
+        g: g * 0.25,
+        b: b * 0.25,
+      };
     }
+
+
+
 
     function HSVtoRGB(h, s, v) {
       let r, g, b, i, f, p, q, t;
