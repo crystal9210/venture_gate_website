@@ -11,7 +11,7 @@ import { forwardRef } from "react";
 export const AnimatedLogo = forwardRef<HTMLDivElement>((props, ref) => (
     /* 親に透視距離を持たせると translateZ が効く */
     <div
-        className="w-124 h-32 flex flex-start items-center justify-center max-[414px]:w-[60vw] max-[414px]:h-auto max-[414px]:my-2"
+        className="w-124 h-32 flex flex-start items-center justify-center max-[414px]:w-[60vw] max-[414px]:h-auto max-[414px]:!h-auto max-[414px]:my-2"
         style={{ perspective: 800 }}
     >
         <motion.div
