@@ -39,7 +39,7 @@ export const AnimatedLogo = forwardRef<HTMLDivElement>((props, ref) => (
                 height={360}
                 priority
                 draggable={false}
-                // className="m-0 p-0"
+                className="block max-[414px]:my-0"
             />
         </motion.div>
     </div>
