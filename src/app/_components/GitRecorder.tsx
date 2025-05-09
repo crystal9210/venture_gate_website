@@ -49,7 +49,7 @@ export default function GifRecorder() {
     // };
 
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center max-[414px]:mt-0 max-[414px]:mb-0">
             <AnimatedLogo ref={logoRef} />
             {/* <button
                 onClick={record}
