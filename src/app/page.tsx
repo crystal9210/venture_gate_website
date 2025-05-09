@@ -44,11 +44,11 @@ export default function Home() {
     return (
         <>
             <FixedHeader />
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-24 py-8 bg-white pt-0">
+            <main className="max-w-7xl mx-auto px-4 sm:mx-auto md:px-8 lg:px-12 space-y-24 py-8 bg-white pt-0">
                 {/* Hero */}
                 <section
                     id="top"
-                    className="relative text-white py-20 sm:py-24 md:py-32 overflow-hidden shadow-md sm:px-6"
+                    className="relative text-white py-20 sm:py-24 md:py-32 overflow-hidden shadow-md sm:mx-auto"
                     style={{
                         background:
                             "linear-gradient(90deg, #ff7b2d 0%, #f4b917 48%, #fad4b8 100%)",
@@ -58,7 +58,7 @@ export default function Home() {
                         {/* 左側：アイコン + タイトル群 */}
                         <div className="flex flex-col items-center md:items-start md:text-left">
                             {/* GIFアイコン */}
-                            <div className="w-60 sm:w-64 flex flex-col md:w-[20rem] ml-12 mt-4 sm:mt-20 sm:ml-0 md:ml-8 lg:ml-16">
+                            <div className="w-60 sm:w-64 flex flex-col md:ml-12 lg:ml-28 mt-4 sm:mt-2 md:ml-8 lg:ml-16">
                                 <GifRecorder />
                             </div>
 
