@@ -54,7 +54,7 @@ export default function Home() {
                             "linear-gradient(90deg, #ff7b2d 0%, #f4b917 48%, #fad4b8 100%)",
                     }}
                 >
-                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start gap-10 max-[414px]:mt-0 max-[414px]:mb-0 max-[414px]:py-0">
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start gap-10 max-[414px]:mt-0 max-[414px]:mb-0 max-[414px]:py-0 max-[414px]:gap-2">
                         {/* 左側：アイコン + タイトル群 */}
                         <div className="flex flex-col items-center md:items-start md:text-left max-[414px]:mt-0 max-[414px]:mb-0 max-[414px]:py-0">
                             {/* GIFアイコン */}
