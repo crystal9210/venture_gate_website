@@ -43,6 +43,29 @@ export default function Home() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        name: "埼玉大学事業創造サークル Venture Gate",
+                        alternateName: "Venture Gate",
+                        url: "https://venturegatewebsite.vercel.app/",
+                        logo: "https://venturegatewebsite.vercel.app/images/VentureGate.png",
+                        foundingDate: "2025",
+                        founder: [
+                            { "@type": "Person", name: "木村 遼" },
+                            { "@type": "Person", name: "上谷 竜" },
+                        ],
+                        member: [
+                            { "@type": "Person", name: "木村 遼" },
+                            { "@type": "Person", name: "上谷 竜" },
+                        ],
+                        sameAs: ["https://www.instagram.com/venturegate_su/"],
+                    }),
+                }}
+            />
             <FixedHeader />
             <main className="max-w-7xl mx-auto px-4 sm:mx-auto md:px-8 lg:px-12 space-y-24 py-8 bg-white pt-0">
                 {/* Hero */}
