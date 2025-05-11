@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 // verification: {
 //   google: "SS83tSeBIbFOTQd-Pd184ZBk1WJZs1HKP4LlzmcreS0", // ここにSearch Consoleで発行されたコードを入力
 // },
-export const metadata = {
+export const metadata: Metadata = {
     title: "埼玉大学事業創造サークル Venture Gate | アントレプレナーシップ・ビジネス・起業",
     description:
         "埼玉大学公認の事業創造サークル『Venture Gate』は、アントレプレナーシップ・ビジネス・起業を軸に活動中。新しいことに挑戦したい学生を募集しています。ビジネス案の議論、イベント企画、ビジネスコンテスト参加など多彩な活動を実施中！",
