@@ -21,6 +21,54 @@ const geistMono = Geist_Mono({
 // verification: {
 //   google: "SS83tSeBIbFOTQd-Pd184ZBk1WJZs1HKP4LlzmcreS0", // ここにSearch Consoleで発行されたコードを入力
 // },
+
+// メインキーワード
+const mainKeywords = [
+    "埼玉大学 サークル",
+    "埼大 サークル",
+    "埼玉大学 起業",
+    "埼大 起業",
+    "埼玉大学 ビジコン",
+    "埼大 ビジコン",
+    "埼玉大学 アントレプレナーシップ",
+    "埼大 アントレプレナーシップ",
+    "埼玉大学 就活",
+    "埼大 就活",
+];
+
+// サブキーワード
+const subKeywords = [
+    "事業創造サークル",
+    "Venture Gate",
+    "ベンチャーゲート",
+    "学生サークル",
+    "学生 起業",
+    "学生 挑戦",
+    "学生 起業支援",
+    "ビジネス",
+    "ビジネスコンテスト",
+    "大学サークル",
+    "イベント",
+    "サークル 新歓",
+    "起業支援",
+    "起業イベント",
+    "ベンチャー",
+    "学生団体",
+    "サークル 募集",
+    "サークル 一覧",
+    "ビジコン 参加",
+    "アントレプレナー教育",
+    "キャリア形成",
+    "キャリア支援",
+    "インターン",
+    "就職活動",
+    "埼玉大学 経営",
+    "埼玉大学 企業",
+    "埼玉大学 企業連携",
+];
+
+const keywords = [...mainKeywords, ...subKeywords];
+
 export const metadata: Metadata = {
     title: "埼玉大学事業創造サークル Venture Gate | アントレプレナーシップ・ビジネス・起業",
     description:
@@ -28,50 +76,7 @@ export const metadata: Metadata = {
     verification: {
         google: "SS83tSeBIbFOTQd-Pd184ZBk1WJZs1HKP4LlzmcreS0",
     },
-    keywords: [
-        "埼玉大学",
-        "事業創造サークル",
-        "Venture Gate",
-        "venture gate",
-        "venturegate",
-        "Venturegate",
-        "ventureGate",
-        "VentureGate",
-        "アントレプレナーシップ",
-        "ビジネス",
-        "起業",
-        "学生サークル",
-        "ビジネスコンテスト",
-        "ビジコン",
-        "イベント",
-        "大学サークル",
-        "SU",
-        "埼玉 国立大学",
-        "埼玉 大学",
-        "学生 起業",
-        "学生 挑戦",
-        "ベンチャーゲート",
-        "埼大 サークル",
-        "学生 起業支援",
-        "SU サークル",
-        "大学 ビジコン",
-        "埼玉 ビジコン",
-        "ビジコン",
-        "SU ビジコン",
-        "SU 経営",
-        "埼玉大学 経営",
-        "埼玉大学 企業",
-        "埼玉大学 企業連携",
-        "SU 埼玉大学",
-        "su 埼玉大学",
-        "SU 埼大",
-        "su 埼大",
-        "su ビジコン",
-        "su 経営",
-        "su サークル",
-        "su",
-        "埼玉大学 新歓",
-    ],
+    keywords: keywords,
     openGraph: {
         title: "埼玉大学事業創造サークル Venture Gate",
         description:
