@@ -115,6 +115,16 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ja">
+            <head>
+                <link
+                    rel="icon"
+                    type="image/png"
+                    href="/images/VentureGateIconGoogleSearch.png"
+                    sizes="48x48"
+                />
+                {/* 必要なら.icoも */}
+                {/* <link rel="icon" type="image/x-icon" href="/favicon.ico" /> */}
+            </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
