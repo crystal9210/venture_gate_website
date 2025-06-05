@@ -7,6 +7,7 @@ import {
     FaEnvelope,
     FaHandshake,
     FaInstagram,
+    FaTrophy,
     FaWpforms,
 } from "react-icons/fa";
 import FixedHeader from "./_components/FixedHeader";
@@ -15,6 +16,8 @@ import SplashCursor from "./_components/SplashCursor";
 import { useEffect, useRef, useState } from "react";
 import GateLogo from "./_components/GateLogo";
 import GifRecorder from "./_components/GitRecorder";
+import { achievementsData } from "./_seeds/achievement"; // データソースを指定
+import RollingGallery, { GalleryItem } from "./_components/RollingGallery";
 
 export default function Home() {
     const sectionRef = useRef<HTMLElement | null>(null);
@@ -40,6 +43,18 @@ export default function Home() {
             if (currentSection) observer.unobserve(currentSection);
         };
     }, []);
+
+    // achievementsData から GalleryItem[] を生成
+    // imageUrl が有効なもの (null や空文字でない) のみをフィルタリング
+    const galleryItems: GalleryItem[] = achievementsData
+        .filter((item) => item.logo && item.logo.trim() !== "")
+        .map((item) => ({
+            id: item.id,
+            imageUrl: item.logo!, // 上のfilterでnull/空文字は除外されているため非nullアサーション
+            targetUrl:
+                item.url && item.url.trim() !== "" ? item.url : undefined, // urlも空ならundefined
+            altText: item.title || "実績ロゴ", // titleがなければデフォルトaltテキスト
+        }));
 
     return (
         <>
@@ -380,6 +395,45 @@ export default function Home() {
                         {/* 追加スポンサーはここに */}
                     </div>
                 </section>
+
+                {/* ---------- 実績紹介 (RollingGalleryを使用) ---------- */}
+                <section id="achievements" className="py-12 md:py-16 space-y-8">
+                    {/* セクションタイトル (左寄せ、オレンジ基調) */}
+                    <div className="flex items-center gap-3 mb-8 md:mb-12">
+                        <FaTrophy className="text-3xl sm:text-4xl text-orange-500" />
+                        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#ea580c]">
+                            実績
+                        </h2>
+                    </div>
+
+                    <p className="text-lg text-gray-600 max-w-3xl">
+                        Venture
+                        Gateのこれまでの活動成果や、メンバーが挑戦し達成した実績の一部をローリングギャラリーでご紹介します。ロゴをクリックすると関連ページへ移動します。
+                    </p>
+
+                    {/* RollingGallery コンポーネントの呼び出し */}
+                    {galleryItems.length > 0 ? (
+                        <RollingGallery
+                            items={galleryItems} // フィルタリング済みのアイテムを渡す
+                            galleryHeight={300} // ギャラリー全体の高さを指定 (px)
+                            itemHeight={120} // 各アイテムの高さを指定 (px)
+                            itemWidth={250} // 各アイテムの幅を指定 (px)
+                            autoplay={true}
+                            pauseOnHover={true}
+                        />
+                    ) : (
+                        <div className="text-center py-12">
+                            <FaTrophy className="text-5xl text-gray-300 mx-auto mb-6" />
+                            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
+                                新たな成果を準備中です
+                            </h3>
+                            <p className="text-gray-500 text-lg">
+                                Venture Gateの今後の活動と実績にご期待ください。
+                            </p>
+                        </div>
+                    )}
+                </section>
+                {/* ---------- 実績紹介 ここまで ---------- */}
 
                 {/* お問い合わせ */}
                 <section id="contact" className="space-y-8 max-w-3xl px-4">
